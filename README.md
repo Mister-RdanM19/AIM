@@ -33,19 +33,6 @@ Penyajian bacaan sholat dan doa wudhu lengkap dengan **Arab, Latin, dan terjemah
 ### 📆 Kalender Hijriah  
 Menampilkan tanggal Hijriah hari ini secara otomatis.
 
----
-
-## 🚀 Cara Menggunakan
-
-1. **Clone atau unduh** repository ini  
-2. Buka file **`index.html`** di browser favorit kamu  
-3. Izinkan akses:
-   - Lokasi (untuk jadwal & arah kiblat)
-   - Notifikasi (untuk adzan)
-   - Sensor gerak (untuk kompas)  
-4. Gunakan menu aplikasi untuk menjelajahi fitur-fiturnya
-
----
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -60,8 +47,8 @@ Aplikasi ini dibuat sepenuhnya dengan:
 Mr.Rm19 - ramdan19id@gmail.com
 
 
-## 🤝 LIVE VIEW 
+## 🤝 LIVE VIEW &  🚀 Cara Menggunakan
 
-LINK : https://mister-rdanm19.github.io/AIM/
+KLIK LINK INI : https://mister-rdanm19.github.io/AIM/
 
 <img src="https://raw.githubusercontent.com/Mister-RdanM19/AIM/refs/heads/main/1.png">
