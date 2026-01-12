@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Aplikasi Ibadah Muslim</title>
+
+<style>
+:root{
+--bg:#f1f8f4;
+--card:#ffffff;
+--text:#1b4332;
+--accent:#2d6a4f;
+}
+.dark{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e5e7eb;
+--accent:#22c55e;
+}
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+header{
+background:var(--accent);
+color:white;
+padding:20px;
+text-align:center;
+}
+.container{max-width:1000px;margin:auto;padding:15px}
+.menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+}
+button{
+padding:12px;border:none;border-radius:10px;
+background:var(--accent);color:white;cursor:pointer;
+}
+.card{
+background:var(--card);
+padding:20px;border-radius:15px;
+margin-top:15px;display:none;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.arab{font-size:22px;direction:rtl;text-align:right}
+.latin{font-style:italic}
+.arti{color:gray}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📿 Aplikasi Tata Cara Ibadah</h1>
+<p>code ini di buat oleh Mr.Rm19 - ramdan19id@gmail.com </p>
+</header>
+
+<div class="container">
+
+<div class="menu">
+<button onclick="show('jadwal')">🕋 Jadwal</button>
+<button onclick="show('sholat')">🙏 Sholat</button>
+<button onclick="show('wudhu')">💧 Wudhu</button>
+<button onclick="show('hijriah')">🗓 Hijriah</button>
+<button onclick="show('kiblat')">🧭 Kiblat</button>
+<button onclick="toggleDark()">🌙 Mode</button>
+</div>
+
+<!-- JADWAL -->
+<div id="jadwal" class="card">
+<h2>Jadwal Sholat</h2>
+<input id="city" placeholder="Nama Kota" style="width:100%;padding:10px">
+<button onclick="getJadwal()">Tampilkan</button>
+<table id="jadwalTable"></table>
+</div>
+
+<!-- SHOLAT -->
+<div id="sholat" class="card">
+<h2>Bacaan Sholat Lengkap</h2>
+
+<p class="arab">أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+<p class="latin">Ushallī farḍaṣ-ṣubḥi rak‘ataini lillāhi ta‘ālā</p>
+<p class="arti">Aku niat sholat fardhu Subuh dua rakaat karena Allah Ta’ala</p>
+
+<hr>
+
+<p class="arab">ٱللَّٰهُ أَكْبَرُ</p>
+<p class="latin">Allāhu akbar</p>
+<p class="arti">Allah Maha Besar</p>
+
+<hr>
+
+<p class="arab">
+سُبْحَانَكَ ٱللّٰهُمَّ وَبِحَمْدِكَ
+وَتَبَارَكَ ٱسْمُكَ
+وَتَعَالَىٰ جَدُّكَ
+وَلَا إِلٰهَ غَيْرُكَ
+</p>
+<p class="latin">Subḥānakallāhumma wa biḥamdik…</p>
+<p class="arti">Maha Suci Engkau ya Allah…</p>
+
+<hr>
+
+<p class="arab">سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِهِ</p>
+<p class="latin">Subḥāna rabbiyal ‘aẓīmi wa biḥamdih</p>
+<p class="arti">Maha Suci Tuhanku Yang Maha Agung</p>
+
+<hr>
+
+<p class="arab">سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+<p class="latin">Sami‘allāhu liman ḥamidah</p>
+<p class="arti">Allah mendengar orang yang memuji-Nya</p>
+
+<hr>
+
+<p class="arab">سُبْحَانَ رَبِّيَ الْأَعْلَىٰ وَبِحَمْدِهِ</p>
+<p class="latin">Subḥāna rabbiyal a‘lā wa biḥamdih</p>
+<p class="arti">Maha Suci Tuhanku Yang Maha Tinggi</p>
+
+<hr>
+
+<p class="arab">
+رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَارْزُقْنِي
+</p>
+<p class="latin">Rabbighfir lī warḥamnī warzuqnī</p>
+<p class="arti">Ya Allah, ampunilah aku, rahmatilah aku, dan beri aku rezeki</p>
+
+<hr>
+
+<p class="arab">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ</p>
+<p class="latin">Assalāmu‘alaikum warahmatullāh</p>
+<p class="arti">Semoga keselamatan dan rahmat Allah tercurah kepadamu</p>
+</div>
+
+<!-- WUDHU -->
+<div id="wudhu" class="card">
+<h2>Wudhu Lengkap</h2>
+
+<p class="arab">
+نَوَيْتُ الْوُضُوءَ لِرَفْعِ الْحَدَثِ الْأَصْغَرِ لِلّٰهِ تَعَالَى
+</p>
+<p class="latin">
+Nawaitul wuḍū’a li raf‘il ḥadatsil aṣghar lillāhi ta‘ālā
+</p>
+<p class="arti">
+Aku niat berwudhu untuk menghilangkan hadas kecil karena Allah Ta’ala
+</p>
+
+<hr>
+
+<p class="arab">
+أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ
+وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+</p>
+<p class="latin">
+Asyhadu allā ilāha illallāh  
+wa asyhadu anna Muḥammadan ‘abduhū wa rasūluh
+</p>
+<p class="arti">
+Aku bersaksi tiada Tuhan selain Allah dan Nabi Muhammad adalah hamba dan utusan-Nya
+</p>
+</div>
+
+<!-- HIJRIAH -->
+<div id="hijriah" class="card">
+<h2>Kalender Hijriah</h2>
+<p id="hijriDate"></p>
+</div>
+
+<!-- KIBLAT -->
+<div id="kiblat" class="card">
+<h2>Arah Kiblat Realtime</h2>
+<button onclick="startKiblat()">Aktifkan Kompas</button>
+<p id="kiblatResult"></p>
+<div style="width:200px;height:200px;border:5px solid var(--accent);border-radius:50%;margin:auto;position:relative">
+<div id="needle" style="width:5px;height:90px;background:red;position:absolute;top:10px;left:50%;transform-origin:bottom"></div>
+</div>
+</div>
+
+</div>
+
+<audio id="adzan">
+<source src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Adhan.ogg">
+</audio>
+
+<script>
+let timings={},kiblatDeg=0;
+
+function show(id){
+document.querySelectorAll('.card').forEach(c=>c.style.display='none');
+document.getElementById(id).style.display='block';
+}
+function toggleDark(){document.body.classList.toggle('dark')}
+
+function getJadwal(){
+fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city.value}&country=Indonesia&method=2`)
+.then(r=>r.json())
+.then(d=>{
+timings=d.data.timings;
+jadwalTable.innerHTML=`
+<tr><td>Subuh</td><td>${timings.Fajr}</td></tr>
+<tr><td>Dzuhur</td><td>${timings.Dhuhr}</td></tr>
+<tr><td>Ashar</td><td>${timings.Asr}</td></tr>
+<tr><td>Maghrib</td><td>${timings.Maghrib}</td></tr>
+<tr><td>Isya</td><td>${timings.Isha}</td></tr>`;
+});
+}
+
+setInterval(()=>{
+let now=new Date().toTimeString().slice(0,5);
+for(let k in timings){
+if(now===timings[k]){
+adzan.play();
+if(Notification.permission==="granted"){
+new Notification("Waktu Sholat",{body:`Saatnya sholat ${k}`});
+}
+}
+}
+},30000);
+
+if(Notification.permission!=="granted")Notification.requestPermission();
+
+fetch("https://api.aladhan.com/v1/gToH")
+.then(r=>r.json())
+.then(d=>{
+hijriDate.innerText=`${d.data.hijri.day} ${d.data.hijri.month.en} ${d.data.hijri.year} H`;
+});
+
+// KIBLAT
+const KAABA_LAT=21.4225,KAABA_LON=39.8262;
+function startKiblat(){
+navigator.geolocation.getCurrentPosition(p=>{
+kiblatDeg=hitung(p.coords.latitude,p.coords.longitude);
+kiblatResult.innerText=`Arah Kiblat: ${kiblatDeg.toFixed(2)}°`;
+window.addEventListener('deviceorientation',e=>{
+if(e.alpha===null)return;
+needle.style.transform=`rotate(${kiblatDeg-(360-e.alpha)}deg)`;
+});
+});
+}
+function hitung(lat,lon){
+let φ1=lat*Math.PI/180,φ2=KAABA_LAT*Math.PI/180;
+let dλ=(KAABA_LON-lon)*Math.PI/180;
+return (Math.atan2(Math.sin(dλ),
+Math.cos(φ1)*Math.tan(φ2)-Math.sin(φ1)*Math.cos(dλ))
+*180/Math.PI+360)%360;
+}
+</script>
+
+</body>
+</html>
