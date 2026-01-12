@@ -2,7 +2,7 @@
 
 **AIM (Aplikasi Ibadah Muslim)** adalah sebuah aplikasi web edukatif yang dirancang untuk membantu pengguna mempelajari dan menjalankan ibadah sehari-hari secara lebih mudah, interaktif, dan lengkap.
 
-Aplikasi ini mencakup fitur-fitur penting seperti:
+Aplikasi ini mencakup fitur-fitur penting seperti:<br>
 ✔ Jadwal sholat berdasarkan kota  
 ✔ Notifikasi adzan dengan suara  
 ✔ Mode gelap/terang  
