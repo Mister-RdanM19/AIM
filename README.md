@@ -47,7 +47,7 @@ Aplikasi ini dibuat sepenuhnya dengan:
 Mr.Rm19 - ramdan19id@gmail.com
 
 
-## 🤝 LIVE VIEW &  🚀 Cara Menggunakan
+## 🤝 LIVE VIEW & Cara Menggunakan
 
 KLIK LINK INI : https://mister-rdanm19.github.io/AIM/
 
